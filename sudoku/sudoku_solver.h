@@ -2,23 +2,19 @@
 #define SUDOKU_SUDOKU_SOLVER_H_
 
 #include <stddef.h>
-#include <vector>
+#include <string>
 
 namespace sudoku {
 
 class SudokuSolver {
 public:
-  SudokuSolver(std::vector<std::vector<char>>& board);
-
-  bool Solve();
+  bool Solve(std::string& board);
 
 private:
-  bool CheckValid(size_t x, size_t y);
+  bool CheckValid(size_t cur, std::string& board);
 
-  bool Dfs(size_t x, size_t y);
+  bool Dfs(size_t cur, std::string& board);
 
-private:
-  std::vector<std::vector<char>>& board_;
 };
 
 }
