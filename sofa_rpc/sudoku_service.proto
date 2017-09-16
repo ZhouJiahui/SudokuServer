@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+package sofa_sudoku;
+
+option cc_generic_services = true;
+
+message SudokuRequest {
+  required string request = 1;
+}
+
+message SudokuResponse {
+  required bool   anwser = 1;                                                                                                                    
+  required string response = 2;
+}
+
+service SudokuServer {
+  rpc Solve(SudokuRequest) returns(SudokuResponse);
+}
