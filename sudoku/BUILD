@@ -1,9 +1,11 @@
+package(default_visibility = ["//visibility:public"])
 
 cc_library(
   name = "sudoku",
-  srcs = [
+  includes = ["src"],
+  srcs = glob([
     "src/*.cc",
-  ],
+  ]),
 )
 
 
