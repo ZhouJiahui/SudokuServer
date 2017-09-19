@@ -5,7 +5,11 @@
 namespace sudoku {
 
 bool SudokuSolver::Solve(std::string& board) {
-  return Dfs(0, board);
+  if (board.size() != 9 * 9) {
+    return false;
+  } else {
+    return Dfs(0, board);
+  }
 }
 
 bool SudokuSolver::CheckValid(size_t cur, std::string& board) {
